@@ -1,0 +1,66 @@
+h1 Polymer Rails Example
+
+.row
+  .columns.small-3
+    h4 Enabled
+    paper-material.padder elevation=1
+      .row
+        .columns
+          paper-checkbox Oxygen
+      .row
+        .columns
+          paper-checkbox Carbon
+      .row
+        .columns
+          paper-checkbox Hydrogen
+  .columns.small-3
+  .columns.small-3
+  .columns.small-3
+
+br
+
+.row
+  .columns.small-3
+    h4 Flat
+    paper-material.padder elevation=1
+      .row
+        .columns
+          paper-button flat button
+  .columns.small-3
+    h4 Raised
+    paper-material.padder elevation=1
+      .row
+        .columns
+          paper-button[raised] raised button
+  .columns.small-3
+  .columns.small-3
+
+br
+
+.row
+  .columns.small-2
+    paper-material.padder elevation=1
+      = paper_input :user, :last_name, label: 'First Name'
+
+
+  .columns.small-2
+    paper-material.padder elevation=2
+  .columns.small-2
+    paper-material.padder elevation=3
+  .columns.small-2
+    paper-material.padder elevation=4
+  .columns.small-2
+    paper-material.padder elevation=5
+      = paper_input :user, :last_name, label: 'Last Name'
+      div
+        = paper_input :user, :last_name, label: 'First Name'
+
+paper-fab icon="add"
+
+.row
+  .columns
+    paper-material.padder elevation=1
+      = polymer_form_for User.new do |f|
+        = f.paper_input :first_name, label: 'First Name'
+        = f.paper_input :last_name, label: 'Last Name'
+        = f.paper_textarea :description, label: 'Description'
